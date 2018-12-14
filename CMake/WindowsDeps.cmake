@@ -6,9 +6,6 @@ function(download_package package_name)
         file(DOWNLOAD
             https://github.com/OrionUO/dep-build-win/raw/master/${package_name}.zip
             "${CMAKE_BINARY_DIR}/downloads/${package_name}.zip" SHOW_PROGRESS)
-        if (NOT DOWNLOAD_SUCCESS EQUAL 0)
-            message(WARNING "Could not download ${package_name}.zip format!")
-        endif()
         execute_process(COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_BINARY_DIR}/downloads/${package_name}.zip"
             WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}")
     endif()

@@ -60,7 +60,7 @@ if(ORION_WINDOWS)
 	endif()
 
 	set(DEP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/Dependencies/include")
-	set(DEP_LIB_DIR "${CMAKE_SOURCE_DIR}/Dependencies/lib/${ORION_ARCH}/")
+	set(DEP_LIB_DIR "${CMAKE_SOURCE_DIR}/Dependencies/${ORION_ARCH}/lib/")
 
 	set(GLEW_INCLUDE_DIR "${DEP_INCLUDE_DIR}")
 	set(GLEW_LIBRARIES "${DEP_LIB_DIR}glew32.lib")
@@ -69,7 +69,7 @@ if(ORION_WINDOWS)
 	set(SDL2_LIBRARIES "${DEP_LIB_DIR}sdl2.lib" "${DEP_LIB_DIR}sdl2main.lib")
 
 	# temporary hijacking to use other libs
-	set(SDL2_LIBRARIES ${SDL2_LIBRARIES} "${DEP_LIB_DIR}bass.lib" "${DEP_LIB_DIR}bassmidi.lib" "${DEP_LIB_DIR}psapi.lib")
+	set(SDL2_LIBRARIES ${SDL2_LIBRARIES} "${DEP_LIB_DIR}psapi.lib")
 else()
 	set(ORION_DLL_STATIC ON)
 	set(ORION_WISP OFF)
