@@ -52,15 +52,15 @@ if(ORION_WINDOWS)
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MDd")
 
 	if(NOT "${CMAKE_GENERATOR}" MATCHES "(Win64|IA64)")
-		set(_WIN_TARGET "Win32")
+		set(ORION_ARCH "x86")
 		set(ORION_64BITS 0)
 	else()
-		set(_WIN_TARGET "x64")
+		set(ORION_ARCH "x64")
 		set(ORION_64BITS 1)
 	endif()
 
 	set(DEP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/Dependencies/include")
-	set(DEP_LIB_DIR "${CMAKE_SOURCE_DIR}/Dependencies/lib/${_WIN_TARGET}/")
+	set(DEP_LIB_DIR "${CMAKE_SOURCE_DIR}/Dependencies/lib/${ORION_ARCH}/")
 
 	set(GLEW_INCLUDE_DIR "${DEP_INCLUDE_DIR}")
 	set(GLEW_LIBRARIES "${DEP_LIB_DIR}glew32.lib")
