@@ -411,7 +411,7 @@ else()
 
   if(NOT ORION_WINDOWS)
     add_library(orion SHARED ${SRCS} ${headers})
-    target_link_libraries(orion PUBLIC ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${ZLIB_LIBRARIES} ${OPENGL_LIBRARIES} ${FREEIMAGE_LIBRARIES} ${GLEW_LIBRARIES} ${THREAD})
+    target_link_libraries(orion PUBLIC ${SDL2_LIBRARIES} ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES} ${THREAD})
     set_target_properties(orion PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdafx.h")
     cotire(orion)
     add_custom_command(TARGET orion_unity POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy "unity/liborion.so" "orion.so")
@@ -424,7 +424,7 @@ else()
   endif()
 endif()
 
-target_link_libraries(OrionUO PUBLIC ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} ${ZLIB_LIBRARIES} ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES} ${THREAD})
+target_link_libraries(OrionUO PUBLIC ${SDL2_LIBRARIES} ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES} ${THREAD})
 
 if(ORION_WINDOWS)
   set_target_properties(OrionUO PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdafx.h")
