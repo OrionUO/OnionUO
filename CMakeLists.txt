@@ -31,6 +31,7 @@ include(Compiler)
 include(CheckCCompilerFlag)
 include(CCache)
 include(ClangFormat)
+include(WindowsDeps)
 include(Revision)
 
 if(NOT CMAKE_BUILD_TYPE)
