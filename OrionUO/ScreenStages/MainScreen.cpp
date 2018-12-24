@@ -11,7 +11,7 @@
 
 CMainScreen g_MainScreen;
 
-enum eConfigKey
+enum
 {
     MSCC_NONE,
     MSCC_ACTID,
@@ -26,9 +26,11 @@ enum eConfigKey
     MSCC_COUNT,
 };
 
+namespace mscc
+{
 struct ConfigEntry
 {
-    eConfigKey key;
+    uint32_t key;
     const char *key_name;
 };
 
@@ -45,7 +47,7 @@ static const ConfigEntry s_Keys[] = {
     { MSCC_COUNT, nullptr },
 };
 
-static eConfigKey GetConfigKey(const string &key)
+static uint32_t GetConfigKey(const string &key)
 {
     auto str = ToLowerA(key);
     for (int i = 0; s_Keys[i].key_name; i++)
@@ -57,6 +59,8 @@ static eConfigKey GetConfigKey(const string &key)
     }
     return MSCC_NONE;
 }
+
+} // namespace mscc
 
 CMainScreen::CMainScreen()
     : CBaseScreen(m_MainGump)
@@ -251,7 +255,7 @@ void CMainScreen::LoadCustomPath()
         auto strings = file.ReadTokens(false);
         if (strings.size() >= 2)
         {
-            const auto key = GetConfigKey(strings[0]);
+            const auto key = mscc::GetConfigKey(strings[0]);
             switch (key)
             {
                 case MSCC_CUSTOM_PATH:
@@ -282,7 +286,7 @@ void CMainScreen::LoadGlobalConfig()
         auto strings = file.ReadTokens();
         if (strings.size() >= 2)
         {
-            const auto key = GetConfigKey(strings[0]);
+            const auto key = mscc::GetConfigKey(strings[0]);
             LOG("Key: %d for %s\n", key, strings[0].c_str());
             switch (key)
             {
