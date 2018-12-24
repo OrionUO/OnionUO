@@ -287,7 +287,7 @@ bool CWindow::Create(
         0,
         width,
         height,
-        SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
+        SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
     if (m_window == nullptr)
     {
         SDL_LogError(SDL_LOG_CATEGORY_VIDEO, "Coult not create window: %s\n", SDL_GetError());
