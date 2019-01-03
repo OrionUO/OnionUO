@@ -51,9 +51,10 @@ $ ./OrionUO
 #### Dependencies
 
 * [CMake](https://cmake.org/) (`brew install cmake`)
-* [SDL2](https://www.libsdl.org/download-2.0.php) (`brew install sdl2`)
+* [SDL2](https://www.libsdl.org/download-2.0.php) (`brew install sdl2 && brew install sdl2_image`)
 * [GLEW](http://glew.sourceforge.net/) (`brew install glew`)
 * [Ninja](https://ninja-build.org/) (`brew install ninja`)
+* [FreeImage](http://freeimage.sourceforge.net/) (`brew install freeimage`)
 * A recent version of Xcode and the Xcode command line tools
 
 #### Building
