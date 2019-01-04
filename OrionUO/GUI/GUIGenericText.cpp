@@ -22,11 +22,5 @@ void CGUIGenericText::CreateTexture(const wstring &str)
         flags |= UOFONT_CROPPED;
     }
 
-    CreateTextureW(
-        (uint8_t)(g_PacketManager.GetClientVersion() >= CV_305D),
-        str,
-        30,
-        MaxWidth,
-        TS_LEFT,
-        flags);
+    CreateTextureW((uint8_t)(g_Config.ClientVersion >= CV_305D), str, 30, MaxWidth, TS_LEFT, flags);
 }

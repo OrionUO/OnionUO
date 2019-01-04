@@ -189,7 +189,7 @@ bool CSpeechManager::LoadLangCodes()
 void CSpeechManager::GetKeywords(const wchar_t *text, vector<uint32_t> &codes)
 {
     DEBUG_TRACE_FUNCTION;
-    if (!m_Loaded || g_PacketManager.GetClientVersion() < CV_305D)
+    if (!m_Loaded || g_Config.ClientVersion < CV_305D)
     {
         return; // But in fact from the client version 2.0.7
     }

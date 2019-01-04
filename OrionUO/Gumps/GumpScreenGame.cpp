@@ -268,7 +268,7 @@ void CGumpScreenGame::OnLeftMouseButtonUp()
             g_ConfigManager.GameWindowHeight = screenY;
         }
 
-        if (g_PacketManager.GetClientVersion() >= CV_200)
+        if (g_Config.ClientVersion >= CV_200)
         {
             CPacketGameWindowSize().Send();
         }

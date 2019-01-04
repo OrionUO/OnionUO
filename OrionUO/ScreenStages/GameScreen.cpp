@@ -2193,7 +2193,7 @@ void CGameScreen::OnLeftMouseButtonUp()
                 else if (rwo->IsStaticObject() || rwo->IsMultiObject())
                 {
                     STATIC_TILES *st = nullptr;
-                    if (g_PacketManager.GetClientVersion() >= CV_7090 && rwo->IsSurface())
+                    if (g_Config.ClientVersion >= CV_7090 && rwo->IsSurface())
                     {
                         st = ((CRenderStaticObject *)rwo)->GetStaticData();
                     }
@@ -2304,7 +2304,7 @@ void CGameScreen::OnLeftMouseButtonUp()
                                     ->GetW(1020000 + id, true, g_Orion.m_StaticData[id].Name);
                             if (str.length() != 0u)
                             {
-                                if (g_PacketManager.GetClientVersion() >= CV_6000)
+                                if (g_Config.ClientVersion >= CV_6000)
                                 {
                                     g_Orion.CreateUnicodeTextMessage(
                                         TT_CLIENT, 0, 1, 0x03B2, str, rwo);

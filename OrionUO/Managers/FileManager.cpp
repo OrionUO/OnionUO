@@ -69,9 +69,9 @@ CFileManager::~CFileManager()
 bool CFileManager::Load()
 {
     DEBUG_TRACE_FUNCTION;
-    LOG("Client Verison: %d\n", g_PacketManager.GetClientVersion());
+    LOG("Client Verison: %d\n", g_Config.ClientVersion);
 
-    if (g_PacketManager.GetClientVersion() >= CV_7000 && LoadUOPFile(m_MainMisc, "MainMisc.uop"))
+    if (g_Config.ClientVersion >= CV_7000 && LoadUOPFile(m_MainMisc, "MainMisc.uop"))
     {
         return LoadWithUOP();
     }
@@ -193,9 +193,9 @@ bool CFileManager::Load()
         }
     }
 
-    if (UseVerdata && !m_VerdataMul.Load(g_App.UOFilesPath("verdata.mul")))
+    if (g_Config.UseVerdata && !m_VerdataMul.Load(g_App.UOFilesPath("verdata.mul")))
     {
-        UseVerdata = false;
+        g_Config.UseVerdata = false;
     }
 
     return true;
@@ -359,9 +359,9 @@ bool CFileManager::LoadWithUOP()
         }
     }
 
-    if (UseVerdata && !m_VerdataMul.Load(g_App.UOFilesPath("verdata.mul")))
+    if (g_Config.UseVerdata && !m_VerdataMul.Load(g_App.UOFilesPath("verdata.mul")))
     {
-        UseVerdata = false;
+        g_Config.UseVerdata = false;
     }
 
     return true;

@@ -377,7 +377,7 @@ void CGameObject::ClearNotOpenedItems()
 bool CGameObject::Poisoned()
 {
     DEBUG_TRACE_FUNCTION;
-    if (g_PacketManager.GetClientVersion() >= CV_7000)
+    if (g_Config.ClientVersion >= CV_7000)
     {
         return SA_Poisoned;
     }
@@ -387,7 +387,7 @@ bool CGameObject::Poisoned()
 bool CGameObject::Flying()
 {
     DEBUG_TRACE_FUNCTION;
-    if (g_PacketManager.GetClientVersion() >= CV_7000)
+    if (g_Config.ClientVersion >= CV_7000)
     {
         return (m_Flags & 0x04) != 0;
     }
@@ -662,7 +662,7 @@ CGameItem *CGameObject::FindLayer(int layer)
 bool CGameObject::Caller()
 {
     DEBUG_TRACE_FUNCTION;
-    if (g_PacketManager.GetClientVersion() >= CV_7000)
+    if (g_Config.ClientVersion >= CV_7000)
     {
         return pvpCaller;
     }
