@@ -455,7 +455,9 @@ void LoadGlobalConfig()
         g_Config.Key3,
         g_Config.Seed,
         g_Config.EncryptionType);
-    LOG("\tClient Type: %s (%d)\n", GetClientTypeName((CLIENT_FLAG)g_Config.ClientFlag), g_Config.ClientFlag);
+    LOG("\tClient Type: %s (%d)\n",
+        GetClientTypeName((CLIENT_FLAG)g_Config.ClientFlag),
+        g_Config.ClientFlag);
     LOG("\tUse Verdata: %d\n", g_Config.UseVerdata);
 }
 
