@@ -1,7 +1,9 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
-#include "FileSystem.h"
+#include "FileManager.h"
+#include "../FileSystem.h"
+#include "../Config.h"
 
 #define MINIZ_IMPLEMENTATION
 #include <miniz.h>

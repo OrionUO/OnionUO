@@ -1,6 +1,9 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "GumpScreenGame.h"
+#include "../Config.h"
+
 CGumpScreenGame::CGumpScreenGame()
     : CGump(GT_NONE, 0, 0, 0)
 {

@@ -1,6 +1,9 @@
 ﻿// MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "SelectTownScreen.h"
+#include "../Config.h"
+
 CSelectTownScreen g_SelectTownScreen;
 
 CSelectTownScreen::CSelectTownScreen()

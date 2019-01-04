@@ -220,8 +220,10 @@ static void SetClientCrypt(uint32_t version)
     {
         g_Config.EncryptionType = ET_203;
     }
-
-    g_Config.EncryptionType = ET_TFISH;
+    else
+    {
+        g_Config.EncryptionType = ET_TFISH;
+    }
 }
 
 static void ClientVersionFixup(const char *versionStr)
@@ -257,7 +259,7 @@ static void ClientVersionFixup(const char *versionStr)
     }
 
     LOG("\tEmulation Compatibility Version: %s%s (0x%08x)\n", p1, p2, g_Config.ClientVersion);
-    LOG("\tCrypto: %08x %08x %08x %04x (%d)\n",
+    LOG("\tCryptography: %08x %08x %08x %04x (%d)\n",
         g_Config.Key1,
         g_Config.Key2,
         g_Config.Key3,

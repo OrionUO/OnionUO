@@ -1,8 +1,10 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
-#include "FileSystem.h"
+#include "MacroManager.h"
 #include <SDL_clipboard.h>
+#include "../FileSystem.h"
+#include "../Config.h"
 
 CMacroManager g_MacroManager;
 

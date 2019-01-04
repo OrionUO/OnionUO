@@ -1,6 +1,9 @@
 ﻿// MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "SpeechManager.h"
+#include "../Config.h"
+
 CSpeechManager g_SpeechManager;
 
 CSpeechItem::CSpeechItem(uint16_t code, const wstring &data)

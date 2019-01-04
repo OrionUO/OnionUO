@@ -1,8 +1,9 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
-#include <SDL_rect.h>
 #include "GameScreen.h"
+#include <SDL_rect.h>
+#include "../Config.h"
 
 CGameScreen g_GameScreen;
 RENDER_VARIABLES_FOR_GAME_WINDOW g_RenderBounds;
@@ -609,9 +610,8 @@ void CGameScreen::AddTileToRenderList(
 
         bool aphaChanged = false;
 
-#if UO_RENDER_LIST_SORT == 1
         int z = obj->GetZ();
-
+#if UO_RENDER_LIST_SORT == 1
         int maxObjectZ = obj->PriorityZ;
 
         CRenderStaticObject *rso = obj->StaticGroupObjectPtr();

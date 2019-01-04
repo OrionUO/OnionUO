@@ -1,6 +1,9 @@
 ﻿// MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "GUIGenericText.h"
+#include "../Config.h"
+
 CGUIGenericText::CGUIGenericText(int index, uint16_t color, int x, int y, int maxWidth)
     : CGUIText(color, x, y)
     , TextID(index)

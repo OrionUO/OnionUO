@@ -61,7 +61,7 @@ enum CHARACTER_SPEED_TYPE
 {
     CST_NORMAL = 0,   // Normal speed
     CST_FAST_UNMOUNT, // Acceleration of the character's movement when it moves without a mount
-    CST_CANT_RUN, // Only walk, cannot run with or without a mount
+    CST_CANT_RUN,     // Only walk, cannot run with or without a mount
     CST_FAST_UNMOUNT_AND_CANT_RUN // Combine both previous: char cannot run and accelerate only if without mount
 };
 
@@ -75,36 +75,43 @@ enum ENCRYPTION_TYPE
     ET_TFISH // TwoFish + MD5
 };
 
-#define VERSION(a, b, c, d) (((a & 0xff) << 24) | ((b & 0xff) << 16) | ((c & 0xff) << 8) | (d & 0xff))
+#define VERSION(a, b, c, d)                                                                        \
+    (((a & 0xff) << 24) | ((b & 0xff) << 16) | ((c & 0xff) << 8) | (d & 0xff))
 
 enum CLIENT_VERSION
 {
-    CV_OLD   = VERSION(0, 0, 0, 0), // CF_T2A, Standard (<2.0.0)
-    CV_200   = VERSION(2, 0, 0, 0), // CF_RE, Packet sent with screen dimensions
-    CV_200X  = VERSION(2, 0, 0, 'x'), // Special Crypto keys
+    CV_OLD = VERSION(0, 0, 0, 0),    // CF_T2A, Standard (<2.0.0)
+    CV_200 = VERSION(2, 0, 0, 0),    // CF_RE, Packet sent with screen dimensions
+    CV_200X = VERSION(2, 0, 0, 'x'), // Special Crypto keys
     //CV_204C, // Introduced *.def files
-    CV_300   = VERSION(3, 0, 0, 0), // CF_TD
-    CV_305D  = VERSION(3, 0, 5, 'd'), // Using cliloc. Numer of slots in list of characters is equal to number of characters
-    CV_306E  = VERSION(3, 0, 6, 'e'), // Introduced packet with client type (0xBF subcmd 0x0F), uses mp3 instead of midi
-    CV_308   = VERSION(3, 0, 8, 0), // CF_LBR
-    CV_308D  = VERSION(3, 0, 8, 'd'), // Added "Maximum Stats" to the statusbar
-    CV_308J  = VERSION(3, 0, 8, 'j'), // Added "Followers" to the statsubar
-    CV_308Z  = VERSION(3, 0, 8, 'z'), // Added classes: paladin, necromancer; custom houses, 5 resistances, changed professions choice screen, removed "Save Password" checkbox
-    CV_400B  = VERSION(4, 0, 0, 'b'), // Removed tooltips
-    CV_405A  = VERSION(4, 0, 5, 'a'), // CF_SE, Added classes: ninja, samurai
+    CV_300 = VERSION(3, 0, 0, 0), // CF_TD
+    // Using cliloc. Numer of slots in list of characters is equal to number of characters
+    CV_305D = VERSION(3, 0, 5, 'd'),
+    // Introduced packet with client type (0xBF subcmd 0x0F), uses mp3 instead of midi
+    CV_306E = VERSION(3, 0, 6, 'e'),
+    CV_308 = VERSION(3, 0, 8, 0),    // CF_LBR
+    CV_308D = VERSION(3, 0, 8, 'd'), // Added "Maximum Stats" to the statusbar
+    CV_308J = VERSION(3, 0, 8, 'j'), // Added "Followers" to the statsubar
+    // Added classes: paladin, necromancer; custom houses, 5 resistances, changed professions choice screen, removed "Save Password" checkbox
+    CV_308Z = VERSION(3, 0, 8, 'z'),
+    CV_400B = VERSION(4, 0, 0, 'b'),   // Removed tooltips
+    CV_405A = VERSION(4, 0, 5, 'a'),   // CF_SE, Added classes: ninja, samurai
     CV_4011D = VERSION(4, 0, 11, 'd'), // Changed the character creation screen. Added elf race.
-    CV_500A  = VERSION(5, 0, 0, 'a'), // Paperdoll buttons replaced: Journal->Quests; Chat->Guild. Using Mega Cliloc, removed loading of Verdata.mul
-    CV_5020  = VERSION(5, 0, 2, 0), // Added buffs gump
-    CV_5090  = VERSION(5, 0, 9, 0), //
-    CV_6000  = VERSION(6, 0, 0, 0), // Added colors guild / alli chat, chat ignore. Options for a new system target, diplaying object properties, object handles
-    CV_6013  = VERSION(6, 0, 1, 3), //
-    CV_6017  = VERSION(6, 0, 1, 7), //
-    CV_6040  = VERSION(6, 0, 4, 0), // Increased number of character slots
-    CV_6060  = VERSION(6, 0, 6, 0), //
+    // Paperdoll buttons replaced: Journal->Quests; Chat->Guild. Using Mega Cliloc, removed loading of Verdata.mul
+    CV_500A = VERSION(5, 0, 0, 'a'),
+    CV_5020 = VERSION(5, 0, 2, 0), // Added buffs gump
+    CV_5090 = VERSION(5, 0, 9, 0), //
+    // Added colors guild / alli chat, chat ignore. Options for a new system target, diplaying object properties, object handles
+    CV_6000 = VERSION(6, 0, 0, 0),
+    CV_6013 = VERSION(6, 0, 1, 3),   //
+    CV_6017 = VERSION(6, 0, 1, 7),   //
+    CV_6040 = VERSION(6, 0, 4, 0),   // Increased number of character slots
+    CV_6060 = VERSION(6, 0, 6, 0),   //
     CV_60142 = VERSION(6, 0, 14, 2), //
-    CV_60144 = VERSION(6, 0, 14, 4), // CF_SA, Changed the character creation screen. Added gargoyle race
-    CV_7000  = VERSION(7, 0, 0, 0),  //
-    CV_7090  = VERSION(7, 0, 9, 0),  //
+    // CF_SA, Changed the character creation screen. Added gargoyle race
+    CV_60144 = VERSION(6, 0, 14, 4),
+    CV_7000 = VERSION(7, 0, 0, 0),   //
+    CV_7090 = VERSION(7, 0, 9, 0),   //
     CV_70130 = VERSION(7, 0, 13, 0), //
     CV_70160 = VERSION(7, 0, 16, 0), //
     CV_70180 = VERSION(7, 0, 18, 0), //

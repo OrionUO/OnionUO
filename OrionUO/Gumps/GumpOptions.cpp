@@ -2,6 +2,7 @@
 // Copyright (C) August 2016 Hotride
 
 #include "GumpOptions.h"
+#include "../Config.h"
 
 #if USE_WISP
 #define KeyName(x) s_HotkeyText[x & 0xFF]

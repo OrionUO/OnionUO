@@ -2,6 +2,7 @@
 // Copyright (C) August 2016 Hotride
 
 #include "GumpScreenSelectProfession.h"
+#include "../Config.h"
 
 enum
 {

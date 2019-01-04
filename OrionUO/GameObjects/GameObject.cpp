@@ -1,7 +1,9 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "GameObject.h"
 #include <SDL_timer.h>
+#include "Config.h"
 
 CGameObject::CGameObject(int serial)
     : CRenderStaticObject(ROT_GAME_OBJECT, serial, 0, 0, 0, 0, 0)

@@ -2,6 +2,9 @@
 // MIT License
 // Copyright (C) August 2016 Hotride
 
+#include "ProfessionManager.h"
+#include "../Config.h"
+
 CProfessionManager g_ProfessionManager;
 
 const string CProfessionManager::m_Keys[m_KeyCount] = {
