@@ -424,6 +424,7 @@ void SaveGlobalConfig()
     }
 
     fprintf(cfg, "ClientVersion=%s\n", g_Config.ClientVersionString.c_str());
+    fprintf(cfg, "Crypt=%s\n", (g_Config.UseCrypt ? "yes" : "no"));
 
     fflush(cfg);
     fs_close(cfg);
