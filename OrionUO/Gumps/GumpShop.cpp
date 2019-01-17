@@ -13,14 +13,14 @@
 
 enum
 {
-    ID_GB_NONE,
+    ID_SHOP_NONE,
 
-    ID_GB_BUTTON_ACCEPT,
-    ID_GB_BUTTON_CLEAR,
-    ID_GB_SHOP_LIST,
-    ID_GB_SHOP_RESULT,
+    ID_SHOP_BUTTON_ACCEPT,
+    ID_SHOP_BUTTON_CLEAR,
+    ID_SHOP_LIST,
+    ID_SHOP_RESULT,
 
-    ID_GB_COUNT,
+    ID_SHOP_COUNT,
 };
 
 CGumpShop::CGumpShop(uint32_t serial, bool isBuyGump, short x, short y)
@@ -41,7 +41,7 @@ CGumpShop::CGumpShop(uint32_t serial, bool isBuyGump, short x, short y)
 
     Add(new CGUIShader(&g_ColorizerShader, true));
     m_ItemList[0] =
-        (CGUIHTMLGump *)Add(new CGUIHTMLGump(ID_GB_SHOP_LIST, 0, 30, 60, 215, 176, false, true));
+        (CGUIHTMLGump *)Add(new CGUIHTMLGump(ID_SHOP_LIST, 0, 30, 60, 215, 176, false, true));
     Add(new CGUIShader(&g_ColorizerShader, false));
 
     if (isBuyGump)
@@ -54,10 +54,10 @@ CGumpShop::CGumpShop(uint32_t serial, bool isBuyGump, short x, short y)
     }
 
     m_ItemList[1] =
-        (CGUIHTMLGump *)Add(new CGUIHTMLGump(ID_GB_SHOP_RESULT, 0, 200, 280, 215, 92, false, true));
+        (CGUIHTMLGump *)Add(new CGUIHTMLGump(ID_SHOP_RESULT, 0, 200, 280, 215, 92, false, true));
 
-    Add(new CGUIHitBox(ID_GB_BUTTON_ACCEPT, 200, 406, 34, 30, true));
-    Add(new CGUIHitBox(ID_GB_BUTTON_CLEAR, 372, 410, 24, 24, true));
+    Add(new CGUIHitBox(ID_SHOP_BUTTON_ACCEPT, 200, 406, 34, 30, true));
+    Add(new CGUIHitBox(ID_SHOP_BUTTON_CLEAR, 372, 410, 24, 24, true));
 
     if (isBuyGump)
     {
@@ -231,12 +231,12 @@ void CGumpShop::PrepareContent()
 void CGumpShop::GUMP_BUTTON_EVENT_C
 {
     DEBUG_TRACE_FUNCTION;
-    if (serial == ID_GB_BUTTON_ACCEPT) //Accept
+    if (serial == ID_SHOP_BUTTON_ACCEPT) //Accept
     {
         NoProcess = true;
         m_ContinueCounter = 0;
     }
-    else if (serial == ID_GB_BUTTON_CLEAR)
+    else if (serial == ID_SHOP_BUTTON_CLEAR)
     { //Clear
         m_ContinueCounter = 0;
     }

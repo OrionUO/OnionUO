@@ -6,7 +6,7 @@
 #if defined(__GNUC__) && __GNUC__ <= 5 && !__clang__
 #define USE_PCH 0
 #else
-#define USE_PCH 0
+#define USE_PCH 1
 #endif
 
 #include <math.h> // M_PI
@@ -85,9 +85,6 @@ typedef SoundInfo *SoundHandle;
 #include <Mmsystem.h>
 #include <tchar.h>
 
-// FIXME
-#include "../Dependencies/include/glew.h"
-#include "../Dependencies/include/wglew.h"
 #if USE_BASS
 #include "../Dependencies/include/bass.h"
 #include "../Dependencies/include/bassmidi.h"
