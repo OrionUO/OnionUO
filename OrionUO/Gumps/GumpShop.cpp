@@ -2,6 +2,14 @@
 // Copyright (C) August 2016 Hotride
 
 #include "GumpShop.h"
+#include "../Target.h"
+#include "../PressedObject.h"
+#include "../SelectedObject.h"
+#include "../Managers/MouseManager.h"
+#include "../GameObjects/GameWorld.h"
+#include "../GameObjects/ObjectOnCursor.h"
+#include "../GameObjects/GamePlayer.h"
+#include "../Network/Packets.h"
 
 enum
 {

@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "WispDataStream.h"
+
 namespace Wisp
 {
 class CMappedFile : public Wisp::CDataReader

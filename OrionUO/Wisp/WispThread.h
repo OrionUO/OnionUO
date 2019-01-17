@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "../Platform.h"
 #include <SDL_thread.h>
 
 namespace Wisp

@@ -3,6 +3,13 @@
 
 #pragma once
 
+#include "MapObject.h"
+#include "../plugin/mulstruct.h"
+
+class CTextContainer;
+class CTextData;
+class CRenderTextObject;
+
 class CRenderStaticObject : public CMapObject
 {
 public:

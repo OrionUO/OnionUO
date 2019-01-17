@@ -3,30 +3,14 @@
 
 #pragma once
 
-#include "Wisp/WispGlobal.h"
-#include "Wisp/WispGeometry.h"
-#include "Wisp/WispLogger.h"
-#include "OrionApplication.h"
-#include "GLEngine/GLFrameBuffer.h"
-#include "GLEngine/GLTexture.h"
-#if defined(__APPLE__)
-#include <OpenGL/gl.h>
-#else
-#include <GL/gl.h>
-#endif
-#include "plugin/enumlist.h"
-#include "DefinitionMacro.h"
+#include "Point.h"
 #include "Constants.h"
+#include "plugin/enumlist.h"
+#include "Backend.h" // CGLTexture, GLuint
+
+class CGump;
 
 #define countof(xarray) (sizeof(xarray) / sizeof(xarray[0]))
-
-#define CWISPDEBUGLOGGER 0
-
-#if CWISPDEBUGLOGGER != 0
-#define DEBUGLOG LOG
-#else //CWISPDEBUGLOGGER == 0
-#define DEBUGLOG(...)
-#endif //CWISPDEBUGLOGGER!=0
 
 enum
 {
@@ -41,17 +25,17 @@ extern bool g_MovingFromMouse;
 extern bool g_AutoMoving;
 extern bool g_AbyssPacket03First;
 
-bool CanBeDraggedByOffset(const Wisp::CPoint2Di &point);
+bool CanBeDraggedByOffset(const CPoint2Di &point);
 void TileOffsetOnMonitorToXY(int &ofsX, int &ofsY, int &x, int &y);
 string ToCamelCase(string text);
 
 class CGameObject;
 int GetDistance(CGameObject *current, CGameObject *target);
-int GetDistance(CGameObject *current, const Wisp::CPoint2Di &target);
-bool CheckMultiDistance(const Wisp::CPoint2Di &current, CGameObject *target, int maxDistance);
-int GetDistance(const Wisp::CPoint2Di &current, CGameObject *target);
-int GetDistance(const Wisp::CPoint2Di &current, const Wisp::CPoint2Di &target);
-int GetRemoveDistance(const Wisp::CPoint2Di &current, CGameObject *target);
+int GetDistance(CGameObject *current, const CPoint2Di &target);
+bool CheckMultiDistance(const CPoint2Di &current, CGameObject *target, int maxDistance);
+int GetDistance(const CPoint2Di &current, CGameObject *target);
+int GetDistance(const CPoint2Di &current, const CPoint2Di &target);
+int GetRemoveDistance(const CPoint2Di &current, CGameObject *target);
 int GetTopObjDistance(CGameObject *current, CGameObject *target);
 
 const char *GetReagentName(uint16_t id);
@@ -91,8 +75,8 @@ extern GAME_STATE g_GameState;
 
 extern CGLTexture g_TextureGumpState[2];
 
-extern Wisp::CSize g_MapSize[MAX_MAPS_COUNT];
-extern Wisp::CSize g_MapBlockSize[MAX_MAPS_COUNT];
+extern CSize g_MapSize[MAX_MAPS_COUNT];
+extern CSize g_MapBlockSize[MAX_MAPS_COUNT];
 
 extern int g_MultiIndexCount;
 
@@ -101,8 +85,8 @@ extern class CGLFrameBuffer g_LightBuffer;
 extern bool g_GumpPressed;
 extern class CRenderObject *g_GumpSelectedElement;
 extern class CRenderObject *g_GumpPressedElement;
-extern Wisp::CPoint2Di g_GumpMovingOffset;
-extern Wisp::CPoint2Df g_GumpTranslate;
+extern CPoint2Di g_GumpMovingOffset;
+extern CPoint2Df g_GumpTranslate;
 extern bool g_ShowGumpLocker;
 
 extern bool g_GrayedPixels;
@@ -169,7 +153,7 @@ extern float g_AnimCharactersDelayValue;
 
 typedef vector<pair<uint32_t, uint32_t>> UINTS_PAIR_LIST;
 
-extern Wisp::CPoint2Di g_RemoveRangeXY;
+extern CPoint2Di g_RemoveRangeXY;
 
 extern int g_GrayMenuCount;
 

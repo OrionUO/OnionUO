@@ -3,6 +3,10 @@
 
 #pragma once
 
+#include "RenderStaticObject.h"
+
+class CGameEffect;
+
 struct DRAW_FRAME_INFORMATION
 {
     int OffsetX;
@@ -41,7 +45,7 @@ public:
     bool pvpCaller = false;
 
 protected:
-    class CGameEffect *m_Effects{ nullptr };
+    CGameEffect *m_Effects{ nullptr };
     CGLTexture m_TextureObjectHalndes{ CGLTexture() };
 
 public:

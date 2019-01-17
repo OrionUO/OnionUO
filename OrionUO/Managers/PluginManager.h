@@ -3,6 +3,9 @@
 
 #pragma once
 
+#include "../BaseQueue.h"
+#include "../DefinitionMacro.h"
+
 class CPlugin : public CBaseQueueItem
 {
 private:

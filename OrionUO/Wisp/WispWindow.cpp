@@ -5,6 +5,9 @@
 #include <SDL_syswm.h>
 #include <SDL_timer.h>
 #include <SDL_rect.h>
+#include "../Point.h"
+#include "../OrionWindow.h"
+#include "../Managers/PluginManager.h"
 
 namespace Wisp
 {
@@ -54,7 +57,7 @@ void CWindow::MaximizeWindow()
 #endif
 }
 
-void CWindow::SetSize(const Wisp::CSize &size)
+void CWindow::SetSize(const CSize &size)
 {
 #if USE_WISP
     DEBUG_TRACE_FUNCTION;
@@ -112,7 +115,7 @@ void CWindow::GetPositionSize(int *x, int *y, int *width, int *height)
 #endif
 }
 
-void CWindow::SetMinSize(const Wisp::CSize &newMinSize)
+void CWindow::SetMinSize(const CSize &newMinSize)
 {
     DEBUG_TRACE_FUNCTION;
     if (m_Size.Width < newMinSize.Width || m_Size.Height < newMinSize.Height)
@@ -156,7 +159,7 @@ void CWindow::SetMinSize(const Wisp::CSize &newMinSize)
     m_MinSize = newMinSize;
 }
 
-void CWindow::SetMaxSize(const Wisp::CSize &newMaxSize)
+void CWindow::SetMaxSize(const CSize &newMaxSize)
 {
     DEBUG_TRACE_FUNCTION;
 

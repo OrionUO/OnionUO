@@ -72,9 +72,9 @@ void DumpRegionInfo(const HANDLE &snapshot, HANDLE hProcess, VMQUERY &vmq)
 
 void DumpLibraryInformation()
 {
-#if USE_WISP_DEBUG_FUNCTION_NAMES == 1
+#if USE_DEBUG_FUNCTION_NAMES == 1
     CRASHLOG("trace functions:\n");
-    for (const string &str : g_WispDebugFunStack)
+    for (const string &str : g_DebugFuncStack)
         CRASHLOG("%s\n", str.c_str());
 
     static bool libraryInfoPrinted = false;
