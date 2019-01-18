@@ -1,6 +1,7 @@
 ﻿// MIT License
 
-#pragma once
+#ifndef WISP_THREAD_H
+#define WISP_THREAD_H
 
 #include "../Platform.h"
 #include <SDL_thread.h>
@@ -46,3 +47,6 @@ public:
 };
 
 }; // namespace Wisp
+
+#endif // WISP_THREAD_H
+

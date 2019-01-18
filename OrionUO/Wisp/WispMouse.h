@@ -1,5 +1,5 @@
-﻿
-#pragma once
+﻿#ifndef WISP_MOUSE_H
+#define WISP_MOUSE_H
 
 #include <SDL_events.h>
 
@@ -40,3 +40,6 @@ public:
 extern CMouse *g_WispMouse;
 
 }; // namespace Wisp
+
+#endif // WISP_MOUSE_H
+

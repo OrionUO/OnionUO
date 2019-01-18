@@ -1,6 +1,7 @@
 // MIT License
 
-#pragma once
+#ifndef WISP_WIN_H
+#define WISP_WIN_H
 
 #include <SDL_video.h>
 #include "Platform.h"
@@ -119,3 +120,6 @@ protected:
 extern CWindow *g_WispWindow;
 
 }; // namespace Wisp
+
+#endif //WISP_WIN_H
+

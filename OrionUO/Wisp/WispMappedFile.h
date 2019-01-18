@@ -1,6 +1,7 @@
 // MIT License
 
-#pragma once
+#ifndef WISP_MAPPED_H
+#define WISP_MAPPED_H
 
 #include "WispDataStream.h"
 
@@ -24,3 +25,6 @@ public:
 };
 
 }; // namespace Wisp
+
+#endif // WISP_MAPPED_H
+

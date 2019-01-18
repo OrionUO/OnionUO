@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef WISP_H
+#define WISP_H
+
 #include "Definitions.h"
 #include "Logging.h"
 #include "Point.h"
@@ -16,3 +19,6 @@
 #include "Wisp/WispThread.h"
 #include "Wisp/WispThreadedTimer.h"
 #include "Wisp/WispWindow.h"
+
+#endif // WISP_H
+
