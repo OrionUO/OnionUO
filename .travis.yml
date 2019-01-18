@@ -5,8 +5,25 @@ matrix:
     - os: linux
       sudo: required
       env: CXX_COMPILER=/usr/bin/clang++-7 CC_COMPILER=/usr/bin/clang-7
-      dist: trusty
+      dist: xenial
       cache: ccache
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+          packages:
+            - ninja-build
+            - clang-7
+            - clang++-7
+            - clang-format-7
+            - libglu1-mesa-dev
+            - libegl1-mesa-dev
+            - libgles2-mesa-dev
+            - xorg-dev
+            - libsdl2-dev
+            - libglew-dev
+            - libsndio-dev
+            - libxkbcommon-dev
       script:
         - export CC=${CC_COMPILER}
         - export CXX=${CXX_COMPILER}
@@ -14,8 +31,21 @@ matrix:
     - os: linux
       sudo: required
       env: CXX_COMPILER=gcc++ CC_COMPILER=gcc
-      dist: xenial
+      dist: trusty
       cache: ccache
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+          packages:
+            - libglu1-mesa-dev
+            - libegl1-mesa-dev
+            - libgles2-mesa-dev
+            - xorg-dev
+            - libsdl2-dev
+            - libglew-dev
+            - libsndio-dev
+            - libxkbcommon-dev
       script:
         - export CC=${CC_COMPILER}
         - export CXX=${CXX_COMPILER}
@@ -23,7 +53,13 @@ matrix:
     - os: linux
       sudo: required
       env: CHECK=clang-format
-      dist: trust
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+          packages:
+            - clang-format-7
       script: ./travis.sh
     - os: osx
       sudo: false
@@ -31,18 +67,3 @@ matrix:
       cache: ccache
       script:
         - ./travis.sh
-addons:
-  apt:
-    packages:
-      - ninja-build
-      - clang-7
-      - clang++-7
-      - clang-format-7
-      - libglu1-mesa-dev
-      - libegl1-mesa-dev
-      - libgles2-mesa-dev
-      - xorg-dev
-      - libsdl2-dev
-      - libglew-dev
-      - libsndio-dev
-      - libxkbcommon-dev
