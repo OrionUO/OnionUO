@@ -1,14 +1,36 @@
-dist: xenial
-sudo: require
 language: cpp
 compiler: clang
-os:
-    - linux
-    - osx
-env:
-  - CXX_COMPILER=/usr/bin/clang++-7 CC_COMPILER=/usr/bin/clang-7
-  - CXX_COMPILER=gcc++ CC_COMPILER=gcc
-  - CHECK=clang-format
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      env: CXX_COMPILER=/usr/bin/clang++-7 CC_COMPILER=/usr/bin/clang-7
+      dist: trusty
+      cache: ccache
+      script:
+        - export CC=${CC_COMPILER}
+        - export CXX=${CXX_COMPILER}
+        - ./travis.sh
+    - os: linux
+      sudo: required
+      env: CXX_COMPILER=gcc++ CC_COMPILER=gcc
+      dist: xenial
+      cache: ccache
+      script:
+        - export CC=${CC_COMPILER}
+        - export CXX=${CXX_COMPILER}
+        - ./travis.sh
+    - os: linux
+      sudo: required
+      env: CHECK=clang-format
+      dist: trust
+      script: ./travis.sh
+    - os: osx
+      sudo: false
+      osx_image: xcode10
+      cache: ccache
+      script:
+        - ./travis.sh
 addons:
   apt:
     packages:
@@ -24,7 +46,3 @@ addons:
       - libglew-dev
       - libsndio-dev
       - libxkbcommon-dev
-script:
-    - export CC=${CC_COMPILER}
-    - export CXX=${CXX_COMPILER}
-    - ./travis.sh

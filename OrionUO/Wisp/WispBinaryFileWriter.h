@@ -1,7 +1,7 @@
 // MIT License
 
 #ifndef WISP_BFW_H
-#define WISP_NFW_H
+#define WISP_BFW_H
 
 #include "FileSystem.h"
 

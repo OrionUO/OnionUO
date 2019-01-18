@@ -1227,7 +1227,7 @@ void GetDisplaySize(int *x, int *y)
     SDL_GetDisplayUsableBounds(0, &r);
     if (x != nullptr)
     {
-        *x = ;
+        *x = r.w;
     }
     if (y != nullptr)
     {

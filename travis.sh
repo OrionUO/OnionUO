@@ -29,7 +29,6 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
 		#./OrionUO/unity/OrionUO --headless
 	fi
 else
-
 	brew update
 	brew install sdl2 ninja glew
 	brew outdated cmake || brew upgrade cmake
@@ -40,5 +39,4 @@ else
 
 	echo Building Debug
 	mkdir debug && cd debug && cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Debug && ninja orion_unity -j8
-
 fi;
