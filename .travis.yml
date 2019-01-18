@@ -33,7 +33,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'ppa:ubuntu-toolchain-r-test'
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
           packages:
             - libglu1-mesa-dev
             - libegl1-mesa-dev
@@ -53,7 +53,6 @@ matrix:
         apt:
           sources:
             - sourceline: 'ppa:ubuntu-toolchain-r/test'
-            - sourceline: 'ppa:llvm-toolchain-xenial-7'
           packages:
             - clang-format-7
       script: ./travis.sh
