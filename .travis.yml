@@ -52,7 +52,7 @@ matrix:
       addons:
         apt:
           sources:
-            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+            - llvm-toolchain-trusty-7
           packages:
             - clang-format-7
       script: ./travis.sh
