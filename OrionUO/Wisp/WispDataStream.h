@@ -279,4 +279,3 @@ private:
 }; // namespace Wisp
 
 #endif // WISP_DW_H
-

@@ -49,4 +49,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_THREAD_H
-

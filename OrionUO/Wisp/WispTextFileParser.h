@@ -68,4 +68,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_TFP_H
-

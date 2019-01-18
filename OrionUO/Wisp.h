@@ -21,4 +21,3 @@
 #include "Wisp/WispWindow.h"
 
 #endif // WISP_H
-

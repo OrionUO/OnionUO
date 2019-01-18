@@ -27,4 +27,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_BFW_H
-

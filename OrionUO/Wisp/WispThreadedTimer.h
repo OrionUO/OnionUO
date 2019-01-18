@@ -29,4 +29,3 @@ public:
 #endif // USE_TIMERTHREAD
 
 #endif // WISP_TT_H
-

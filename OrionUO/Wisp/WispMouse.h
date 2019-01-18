@@ -42,4 +42,3 @@ extern CMouse *g_WispMouse;
 }; // namespace Wisp
 
 #endif // WISP_MOUSE_H
-

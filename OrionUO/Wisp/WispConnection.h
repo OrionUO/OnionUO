@@ -36,4 +36,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_CON_H
-

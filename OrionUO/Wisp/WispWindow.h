@@ -122,4 +122,3 @@ extern CWindow *g_WispWindow;
 }; // namespace Wisp
 
 #endif //WISP_WIN_H
-

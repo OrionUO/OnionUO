@@ -29,4 +29,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_PCKT_H
-

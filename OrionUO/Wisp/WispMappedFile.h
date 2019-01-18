@@ -27,4 +27,3 @@ public:
 }; // namespace Wisp
 
 #endif // WISP_MAPPED_H
-
