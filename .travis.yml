@@ -8,6 +8,7 @@ os:
 env:
   - CXX_COMPILER=/usr/bin/clang++-7 CC_COMPILER=/usr/bin/clang-7
   - CXX_COMPILER=gcc++ CC_COMPILER=gcc
+  - CHECK=clang-format
 addons:
   apt:
     packages:
