@@ -242,6 +242,6 @@ void CMainScreen::Save()
 
 void CMainScreen::Reset() const
 {
-    g_OrionWindow.SetSize(Wisp::CSize(640, 480));
+    g_OrionWindow.SetSize(CSize(640, 480));
     g_OrionWindow.SetWindowResizable(false);
 }
