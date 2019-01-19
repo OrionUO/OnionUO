@@ -2,8 +2,22 @@
 // Copyright (C) August 2016 Hotride
 
 #include "AnimationManager.h"
+#include "MouseManager.h"
+#include "ConfigManager.h"
+#include "ColorManager.h"
+#include "CorpseManager.h"
+#include "FileManager.h"
+#include "../OrionApplication.h"
+#include "../Target.h"
 #include "../Constants.h"
 #include "../Config.h"
+#include "../OrionUO.h"
+#include "../TargetGump.h"
+#include "../SelectedObject.h"
+#include "../PartyObject.h"
+#include "../OrionWindow.h"
+#include "../ScreenStages/GameScreen.h"
+#include "../GameObjects/GameCharacter.h"
 
 CAnimationManager g_AnimationManager;
 
@@ -92,11 +106,11 @@ void CAnimationManager::UpdateAnimationAddressTable()
 
                 if (direction.FileIndex == 2)
                 {
-                    replace = ((g_LockedClientFeatures & LFF_LBR) != 0u);
+                    replace = (g_Config.ClientFlag >= CF_LBR);
                 }
                 else if (direction.FileIndex == 3)
                 {
-                    replace = ((g_LockedClientFeatures & LFF_AOS) != 0u);
+                    replace = (g_Config.ClientFlag >= CF_AOS);
                 }
                 //else if (direction.FileIndex == 4)
                 //	replace = (g_LockedClientFeatures & LFF_AOS);
@@ -1527,7 +1541,7 @@ void CAnimationManager::FixSittingDirection(uint8_t &layerDirection, bool &mirro
     {
         if (Direction == 3)
         {
-            y += 23 + data.MirrorOffsetY;
+            y += 25 + data.MirrorOffsetY;
             x += offsX - 4;
         }
         else
@@ -1544,7 +1558,7 @@ void CAnimationManager::FixSittingDirection(uint8_t &layerDirection, bool &mirro
         }
         else
         {
-            y += 9 + data.OffsetY;
+            y += 10 + data.OffsetY;
             x -= offsX + 1;
         }
     }
