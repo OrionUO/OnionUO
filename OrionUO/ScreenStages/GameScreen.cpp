@@ -28,7 +28,11 @@ CGameScreen::~CGameScreen()
 void CGameScreen::Init()
 {
     DEBUG_TRACE_FUNCTION;
+#if USE_WISP
     g_OrionWindow.NoResize = false;
+#else
+    g_OrionWindow.SetWindowResizable(true);
+#endif
 
     g_ScreenEffectManager.UseSunrise();
     SmoothScreenAction = 0;

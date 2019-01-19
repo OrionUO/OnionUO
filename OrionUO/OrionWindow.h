@@ -32,6 +32,9 @@ public:
 
     static const uint32_t MessageID = USER_MESSAGE_ID + 402;
 
+    /// Set window resizable or not
+    void SetWindowResizable(const bool windowResizable) const;
+
 protected:
     virtual bool OnCreate();
     virtual void OnDestroy();

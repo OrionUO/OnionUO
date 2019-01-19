@@ -32,6 +32,7 @@ public:
 
     virtual void OnTextInput(const TextEvent &ev) override;
     virtual void OnKeyDown(const KeyEvent &ev) override;
+    void Reset() const;
 
     void Save();
 };

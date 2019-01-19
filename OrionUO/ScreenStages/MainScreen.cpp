@@ -31,9 +31,12 @@ void CMainScreen::Init()
     g_GlobalScale = 1.0;
 
     Load();
-
+#if USE_WISP
     g_OrionWindow.SetSize(Wisp::CSize(640, 480));
     g_OrionWindow.NoResize = true;
+#else
+    Reset();
+#endif
     g_OrionWindow.SetTitle("Ultima Online");
     g_GL.UpdateRect();
 
@@ -225,4 +228,10 @@ void CMainScreen::Save()
     g_Config.SavePassword = m_SavePassword->Checked;
     g_Config.Password = m_Password->GetTextA();
     g_Config.Login = m_Account->GetTextA();
+}
+
+void CMainScreen::Reset() const
+{
+    g_OrionWindow.SetSize(Wisp::CSize(640, 480));
+    g_OrionWindow.SetWindowResizable(false);
 }
