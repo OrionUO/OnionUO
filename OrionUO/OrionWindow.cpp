@@ -685,3 +685,13 @@ bool COrionWindow::OnUserMessages(const UserEvent &ev)
 
     return true;
 }
+
+void COrionWindow::SetWindowResizable(const bool windowResizable) const
+{
+    SDL_SetWindowResizable(m_window, windowResizable ? SDL_TRUE : SDL_FALSE);
+}
+
+void COrionWindow::RestoreWindow() const
+{
+    SDL_RestoreWindow(m_window);
+}

@@ -2060,7 +2060,8 @@ bool CConfigManager::Load(const os_path &path)
 
         if (zoomed)
         {
-            g_OrionWindow.MaximizeWindow();
+            //g_OrionWindow.MaximizeWindow();
+            g_GameScreen.SetZoom(true);
         }
         else
         {

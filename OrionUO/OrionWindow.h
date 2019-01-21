@@ -31,6 +31,8 @@ public:
     int GetRenderDelay();
 
     static const uint32_t MessageID = USER_MESSAGE_ID + 402;
+    void SetWindowResizable(const bool windowResizable) const;
+    void RestoreWindow() const;
 
 protected:
     virtual bool OnCreate();
