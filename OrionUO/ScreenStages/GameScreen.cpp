@@ -75,7 +75,7 @@ void CGameScreen::Init()
 #else
     g_OrionWindow.SetWindowResizable(true);
 
-    if ( m_zoom )
+    if (m_zoom)
     {
         g_OrionWindow.MaximizeWindow();
     }
