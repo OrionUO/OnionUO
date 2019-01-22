@@ -69,7 +69,17 @@ CGameScreen::~CGameScreen()
 void CGameScreen::Init()
 {
     DEBUG_TRACE_FUNCTION;
+
+#if USE_WISP
     g_OrionWindow.NoResize = false;
+#else
+    g_OrionWindow.SetWindowResizable(true);
+
+    if (m_zoom)
+    {
+        g_OrionWindow.MaximizeWindow();
+    }
+#endif
 
     g_ScreenEffectManager.UseSunrise();
     SmoothScreenAction = 0;
@@ -2829,4 +2839,9 @@ void CGameScreen::OnKeyUp(const KeyEvent &ev)
             g_Orion.ChangeWarmode(0);
         }
     }
+}
+
+void CGameScreen::SetZoom(const bool zommed)
+{
+    m_zoom = zommed;
 }
