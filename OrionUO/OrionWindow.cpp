@@ -695,3 +695,4 @@ void COrionWindow::RestoreWindow() const
 {
     SDL_RestoreWindow(m_window);
 }
+
